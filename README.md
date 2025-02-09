@@ -1,15 +1,18 @@
-🐍 Snake AI with Deep Q-Learning 🚀
+# 🐍 Snake AI with Deep Q-Learning 🚀
 
-This project develops a Snake game using Deep Q-Learning. An agent 🤖 is trained using artificial neural networks (MLP) to play the game autonomously and achieve higher scores.
+This project develops a Snake game using **Deep Q-Learning**. An agent 🤖 is trained using artificial neural networks (MLP) to play the game autonomously and achieve higher scores.
 
-📌 Prerequisites
+## 📌 Prerequisites
 
 To run this project, install the following dependencies:
 
+```bash
 pip install numpy pygame tensorflow
+```
 
-📂 Project Structure
+## 📂 Project Structure
 
+```
 ./
 │── classes/
 │   ├── agent.py       # 🧠 Reinforcement learning agent implementation
@@ -21,53 +24,58 @@ pip install numpy pygame tensorflow
 │── main.py            # 🎮 Run the classic Snake game
 │── train_main.py      # 🏋️ Run Snake with reinforcement learning
 │── README.md          # 📜 Project documentation
+```
 
-🎮 Running the Classic Snake Game
+## 🎮 Running the Classic Snake Game
 
 To play the game manually using the WASD keys, run:
 
+```bash
 python main.py
+```
 
-🏆 Training the Reinforcement Learning Model
+## 🏆 Training the Reinforcement Learning Model
 
 To train the model and observe the agent's learning progress, run:
 
+```bash
 python train_main.py
+```
 
-⚠️ Note: Training may take a long time ⏳, as the model is trained for 50,000 episodes.
+⚠️ **Note:** Training may take a long time ⏳, as the model is trained for **50,000 episodes**.
 
-🧠 How Reinforcement Learning Works in This Project
+---
 
-📌 State Representation:
+## 🧠 How Reinforcement Learning Works in This Project
 
-📍 Snake head position
+### 📌 State Representation:
+- 📍 Snake head position
+- 🍏 Food position relative to the snake
+- 🚧 Obstacles (walls and snake's body)
+- 🧭 Current movement direction
 
-🍏 Food position relative to the snake
+### 🏗️ Neural Network Model:
+- 🔹 One hidden layer with **32 neurons** and **ReLU activation**
+- 🎯 Output consists of four values representing actions: **left, right, up, and down**
 
-🚧 Obstacles (walls and snake's body)
+### 🎲 Action Selection Policy:
+- 🎲 **Exploration**: The agent moves randomly in the early training phase.
+- 🎯 **Exploitation**: The agent uses Q-values to make decisions after training.
+- 📉 The **epsilon** value decreases gradually to encourage optimal decision-making.
 
-🧭 Current movement direction
+### 🏋️ Trainer:
+- 🔄 Q-Learning is applied using the **Bellman equation** update.
+- 📏 **Mean Squared Error (MSE)** is used as the loss function to minimize Q-value differences.
 
-🏗️ Neural Network Model:
+---
 
-🔹 One hidden layer with 32 neurons and ReLU activation
+## 🚀 Performance Improvements
 
-🎯 Output consists of four values representing actions: left, right, up, and down
+✅ Increasing memory size in the agent to store more experiences  
+✅ Implementing **Double Q-Learning** to reduce Q-value estimation errors  
+✅ Adjusting the **gamma** value to emphasize future rewards  
+✅ Evaluating model performance after training  
 
-🎲 Action Selection Policy:
+---
 
-🎲 Exploration: The agent moves randomly in the early training phase.
 
-🎯 Exploitation: The agent uses Q-values to make decisions after training.
-
-📉 The epsilon value decreases gradually to encourage optimal decision-making.
-
-🏋️ Trainer:
-
-🔄 Q-Learning is applied using the Bellman equation update.
-
-📏 Mean Squared Error (MSE) is used as the loss function to minimize Q-value differences.
-
-🚀 Performance Improvements
-
-✅ Increasing memory size in the agent to store more experiences✅ Implementing Double Q-Learning to reduce Q-value estimation errors✅ Adjusting the gamma value to emphasize future rewards✅ Evaluating model performance after training
