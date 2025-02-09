@@ -1,4 +1,4 @@
-# 🐍 Snake AI with Deep Q-Learning 🚀
+# 🐍 Snake AI with Deep Q-Learning
 
 This project develops a Snake game using **Deep Q-Learning**. An agent 🤖 is trained using artificial neural networks (MLP) to play the game autonomously and achieve higher scores.
 
